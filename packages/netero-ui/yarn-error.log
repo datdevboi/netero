@@ -1,0 +1,40 @@
+Arguments: 
+  /home/datreformedboi/.nvm/versions/node/v8.9.0/bin/node /home/datreformedboi/.yarn/bin/yarn.js add -D rimraf
+
+PATH: 
+  /home/datreformedboi/.nvm/versions/node/v8.9.0/bin:/home/datreformedboi/.yarn/bin:/home/datreformedboi/anaconda2/bin:/home/datreformedboi/Enthought/Canopy_64bit/User/bin:/home/datreformedboi/.cargo/bin:/home/datreformedboi/bin:/home/datreformedboi/.local/bin:/home/datreformedboi/.yarn/bin:/home/datreformedboi/anaconda2/bin:/home/datreformedboi/Enthought/Canopy_64bit/User/bin:/opt/OpenPrinting-Gutenprint/sbin:/opt/OpenPrinting-Gutenprint/bin:/home/datreformedboi/.cargo/bin:/home/datreformedboi/bin:/home/datreformedboi/.local/bin:/opt/OpenPrinting-Gutenprint/sbin:/opt/OpenPrinting-Gutenprint/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/datreformedboi/Desktop/swift4/swift-4.0-DEVELOPMENT-SNAPSHOT-2017-06-23-a-ubuntu16.04/usr/bin:/snap/bin:/usr/lib/jvm/java-9-oracle/bin:/usr/lib/jvm/java-9-oracle/db/bin:/usr/lib/jvm/java-9-oracle/bin:/usr/lib/jvm/java-9-oracle/db/bin
+
+Yarn version: 
+  1.7.0
+
+Node version: 
+  8.9.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /home/datreformedboi/Desktop/Netero/package.json: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+      at /home/datreformedboi/.yarn/lib/cli.js:1130:59
+      at Generator.next (<anonymous>)
+      at step (/home/datreformedboi/.yarn/lib/cli.js:98:30)
+      at /home/datreformedboi/.yarn/lib/cli.js:109:13
+      at <anonymous>
+
+npm manifest: 
+  {
+      "name": "@datdevboi/netero-ui",
+      "version": "0.1.0",
+      "license": "MIT",
+      "main": "lib/index.js",
+      "scripts": {
+          "build": "tsc"
+      }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
