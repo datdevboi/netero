@@ -6,6 +6,11 @@
     "packages": [
       "packages/*"
     ],
+    "nohoist": [
+      "**/rimraf",
+      "**/rimraf/**"
+    ]
+  },
   "devDependencies": {
     "lerna": "^2.11.0"
   }
