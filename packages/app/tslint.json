@@ -9,6 +9,7 @@
   },
   "rules": {
     "ordered-imports": false,
-    "import-sources-order": "any"
+    "import-sources-order": "any",
+    "member-ordering": false
   }
 }
