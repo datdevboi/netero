@@ -7,6 +7,13 @@
     "build": "rimraf lib && tsc"
   },
   "devDependencies": {
+    "@types/react": "^16.4.11",
     "rimraf": "^2.6.2"
+  },
+  "dependencies": {
+    "polished": "^1.9.3",
+    "react": "^16.4.2",
+    "styled-components": "^3.4.2",
+    "typescript": "^3.0.1"
   }
 }
