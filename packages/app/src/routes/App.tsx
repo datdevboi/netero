@@ -1,19 +1,12 @@
 import * as React from "react";
 import { MainLayout } from "../components/MainLayout";
 import { Route, Switch } from "react-router-dom";
-import { Button } from "netero-ui";
+import { Buttons } from "./Buttons";
 
-const Hello = () => (
-  <div>
-    <Button type="Primary" size="md">
-      Hello World
-    </Button>
-  </div>
-);
 export const App = () => (
   <MainLayout>
     <Switch>
-      <Route exact={true} path="/" component={Hello} />
+      <Route exact={true} path="/button" component={Buttons} />
     </Switch>
   </MainLayout>
 );
