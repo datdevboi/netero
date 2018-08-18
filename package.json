@@ -3,8 +3,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "gen:data": "ts-node-dev --respawn ./scripts/genComponentData.ts",
     "build": "lerna run build --scope=netero-ui && yarn install",
-    "start": "lerna run start --scope=netero-app"
+    "start": "lerna run start --scope=netero-app",
+    "dev": "nodemon build --watch packages/netero-ui/src/components"
   },
   "workspaces": {
     "packages": [
@@ -16,6 +18,10 @@
     ]
   },
   "devDependencies": {
-    "lerna": "^2.11.0"
+    "chalk": "^2.4.1",
+    "lerna": "^2.11.0",
+    "nodemon": "^1.18.3",
+    "react-docgen-typescript": "^1.6.3",
+    "ts-node-dev": "^1.0.0-pre.26"
   }
 }
