@@ -20,6 +20,9 @@ interface IBtnProps {
   color?: string;
   type?: "Primary" | "Info" | "Success" | "Danger" | "Warning";
   size: "sm" | "md" | "lg";
+  className?: string;
+  onClick: () => {};
+  LeftIcon?: JSX.Element;
 }
 
 const Btn = styled.button<any>`
@@ -37,6 +40,7 @@ const Btn = styled.button<any>`
   font-weight: normal;
   box-shadow: 5px 5px 7px #808080;  
   font-family: Helvetica, sans-serif
+  
   
   
 }
@@ -67,7 +71,12 @@ export class Button extends React.Component<any> {
     type: "Primary"
   };
   render() {
-    const { children, ...otherProps } = this.props;
-    return <Btn {...otherProps}>{children}</Btn>;
+    const { children, LeftIcon, ...otherProps } = this.props;
+    return (
+      <Btn {...otherProps}>
+        {LeftIcon && <LeftIcon />}
+        {children}
+      </Btn>
+    );
   }
 }
