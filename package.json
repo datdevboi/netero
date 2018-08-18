@@ -3,7 +3,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "lerna run build --scope=netero-ui",
+    "build": "lerna run build --scope=netero-ui && yarn install",
     "start": "lerna run start --scope=netero-app"
   },
   "workspaces": {
