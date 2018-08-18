@@ -1,7 +1,3 @@
-const add = (a: any, b: any) => {
-    return a + b;
-}
+import { Button } from "./components/Button/Button";
 
-export {
-    add
-}
+export { Button };
