@@ -16,7 +16,7 @@ const btnTypes: { [key: string]: string } = {
   Warning: "#f0ad4e"
 };
 
-interface IBtnProps {
+export interface IBtnProps {
   color?: string;
   type?: "Primary" | "Info" | "Success" | "Danger" | "Warning";
   size: "sm" | "md" | "lg";
@@ -39,8 +39,11 @@ const Btn = styled.button<any>`
   letter-spacing: .5px;
   font-weight: normal;
   box-shadow: 5px 5px 7px #808080;  
-  font-family: Helvetica, sans-serif
-  
+  font-family: Helvetica, sans-serif;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
   
   
 }
@@ -66,7 +69,7 @@ const Btn = styled.button<any>`
  
 `;
 
-export class Button extends React.Component<any> {
+export class Button extends React.Component<IBtnProps> {
   static defaultProps = {
     type: "Primary"
   };
@@ -74,7 +77,11 @@ export class Button extends React.Component<any> {
     const { children, LeftIcon, ...otherProps } = this.props;
     return (
       <Btn {...otherProps}>
-        {LeftIcon && <LeftIcon />}
+        {LeftIcon && (
+          <span>
+            <LeftIcon />
+          </span>
+        )}
         {children}
       </Btn>
     );
