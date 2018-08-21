@@ -9,7 +9,7 @@ const parse = reactdcts.parse;
 const paths = {
   components: path.join(__dirname, "../packages/netero-ui/src", "components"),
   examples: path.join(__dirname, "../src", "examples"),
-  output: path.join(__dirname, "../common", "componentData.ts")
+  output: path.join(__dirname, "../packages/app/src/data", "componentData.ts")
 };
 
 function getDirectories(filepath: string) {
