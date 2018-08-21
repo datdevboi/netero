@@ -10,6 +10,7 @@
   "rules": {
     "ordered-imports": false,
     "import-sources-order": "any",
-    "member-ordering": false
+    "member-ordering": false,
+    "object-literal-sort-keys": false
   }
 }
