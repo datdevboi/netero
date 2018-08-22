@@ -11,9 +11,7 @@ export class MenuItems extends React.Component {
     return componentNames.map((name: string, i: any) => {
       return (
         <Menu.Item key={i}>
-          <Link to={`/${name.toLowerCase()}`}>
-            <span>{name}</span>
-          </Link>
+          <Link to={`/${name.toLowerCase()}`}>{name}</Link>
         </Menu.Item>
       );
     });
