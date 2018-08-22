@@ -24,7 +24,6 @@ export class MainLayout extends React.Component<any, any> {
           collapsible={true}
           collapsed={this.state.collapsed}
         >
-          <div className="logo" />
           <MenuItems />
         </Sider>
         <Layout>
