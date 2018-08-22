@@ -39,7 +39,7 @@ export class MainLayout extends React.Component<any, any> {
               background: "#fff",
               margin: "24px 16px",
               padding: 24,
-
+              height: "100%",
               minHeight: 280
             }}
           >
