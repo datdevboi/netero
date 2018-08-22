@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Button } from "netero-ui";
-import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
-import { PropTable } from "../components/PropTable";
+
+import { CodeExample } from "../components/CodeExample";
 
 export class Buttons extends React.Component {
   private onClick = () => {
@@ -32,26 +32,11 @@ export class Buttons extends React.Component {
     </div>
     `;
     return (
-      <div
-        style={{
-          position: "relative",
-          display: "flex",
-          height: "100%",
-          flexDirection: "column",
-          justifyContent: "space-between"
-        }}
-      >
-        <LiveProvider scope={{ Button, onClick: this.onClick }} code={example}>
-          <div style={{ marginBottom: "25px" }}>
-            <LivePreview />
-          </div>
-
-          <LiveEditor />
-          <LiveError />
-        </LiveProvider>
-
-        <PropTable name="Button" />
-      </div>
+      <CodeExample
+        code={example}
+        name="Button"
+        scope={{ Button, onClick: this.onClick }}
+      />
     );
   }
 }
