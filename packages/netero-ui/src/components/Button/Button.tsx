@@ -24,11 +24,11 @@ export interface IBtnProps {
   onClick: () => void;
 }
 
-const Btn = styled.button<any>`
+const Btn = styled.button<IBtnProps>`
   background: ${({ color, type }) => (color ? color : btnTypes[type])};
   
  
-  width: ${props => btnSizes[props.size]};
+  width: ${props => btnSizes[props.size || 'md']};
   height: auto; 
   border: none;
   border-radius: 2px;
