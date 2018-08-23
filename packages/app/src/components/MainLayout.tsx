@@ -27,12 +27,25 @@ export class MainLayout extends React.Component<any, any> {
           <MenuItems />
         </Sider>
         <Layout>
-          <Header style={{ background: "#fff", padding: 0 }}>
+          <Header
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              background: "#fff",
+              padding: 5,
+              fontSize: "1.2rem"
+            }}
+          >
             <Icon
               className="trigger"
               type={this.state.collapsed ? "menu-unfold" : "menu-fold"}
               onClick={this.toggle}
+              style={{ flexGrow: 1, textAlign: "left" }}
             />
+            <a href="https://github.com/datdevboi/netero">
+              <Icon type="github" />
+            </a>
           </Header>
           <Content
             style={{
