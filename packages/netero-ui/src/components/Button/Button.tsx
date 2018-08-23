@@ -25,10 +25,11 @@ export interface IBtnProps {
 }
 
 const Btn = styled.button<IBtnProps>`
-  background: ${({ color, type }) => (color ? color : btnTypes[type])};
+  background: ${({ color, type }) =>
+    color ? color : btnTypes[type || "Primary"]};
   
  
-  width: ${props => btnSizes[props.size || 'md']};
+  width: ${props => btnSizes[props.size || "md"]};
   height: auto; 
   border: none;
   border-radius: 2px;
@@ -45,7 +46,7 @@ const Btn = styled.button<IBtnProps>`
 }
   &:hover {
     background: ${({ color, type }) =>
-      color ? darken(0.07)(color) : darken(0.07)(btnTypes[type])};
+      color ? darken(0.07)(color) : darken(0.07)(btnTypes[type || "Primary"])};
    
     letter-spacing: .5px;
     cursor: pointer;
