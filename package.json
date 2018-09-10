@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "gen:data": "ts-node-dev --respawn ./scripts/genComponentData.ts",
-    "build": "lerna run build --scope=netero-ui && yarn install",
+    "build:netero-ui": "lerna run build --scope=netero-ui && yarn install",
+    "build:app": "lerna run build --scope=netero-app",
     "start": "lerna run start --scope=netero-app",
     "dev": "nodemon build --watch packages/netero-ui/src/components"
   },
