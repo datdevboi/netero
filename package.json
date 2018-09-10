@@ -5,7 +5,7 @@
   "scripts": {
     "gen:data": "ts-node-dev --respawn ./scripts/genComponentData.ts",
     "build:netero-ui": "lerna run build --scope=netero-ui && yarn install",
-    "build:app": "lerna run build --scope=netero-app",
+    "build:app": "lerna run build",
     "start": "lerna run start --scope=netero-app",
     "dev": "nodemon build --watch packages/netero-ui/src/components"
   },
