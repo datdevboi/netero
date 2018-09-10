@@ -18,7 +18,7 @@ export class MenuItems extends React.Component {
   };
   public render() {
     return (
-      <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
+      <Menu theme="dark" mode="inline" defaultSelectedKeys={["0"]}>
         {this.renderItems()}
       </Menu>
     );
