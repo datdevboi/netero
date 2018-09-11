@@ -7,7 +7,7 @@
     "build:netero-ui": "lerna run build --scope=netero-ui && yarn install",
     "build:app": "lerna run build",
     "dev": "nodemon build --watch packages/netero-ui/src/components",
-    "test": "lerna run test scope=netero-ui"
+    "test": "jest"
   },
   "workspaces": {
     "packages": [
@@ -26,5 +26,18 @@
     "nodemon": "^1.18.3",
     "react-docgen-typescript": "^1.6.3",
     "ts-node-dev": "^1.0.0-pre.26"
+  },
+  "jest": {
+    "rootDir": "packages/netero-ui/src",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "testURL": "http://localhost:5000/",
+    "transform": {
+      "\\.(ts|tsx)$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$"
   }
 }
