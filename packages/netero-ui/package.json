@@ -7,19 +7,6 @@
     "build": "rimraf lib && tsc",
     "test": "jest"
   },
-  "jest": {
-    "rootDir": "src",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
-    "testURL": "http://localhost:5000/",
-    "transform": {
-      "\\.(ts|tsx)$": "ts-jest"
-    },
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$"
-  },
   "devDependencies": {
     "@types/react": "^16.4.11",
     "react-testing-library": "^5.0.1",
