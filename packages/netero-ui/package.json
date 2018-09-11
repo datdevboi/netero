@@ -4,11 +4,27 @@
   "license": "MIT",
   "main": "lib/index.js",
   "scripts": {
-    "build": "rimraf lib && tsc"
+    "build": "rimraf lib && tsc",
+    "test": "jest"
+  },
+  "jest": {
+    "rootDir": "src",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "testURL": "http://localhost:5000/",
+    "transform": {
+      "\\.(ts|tsx)$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$"
   },
   "devDependencies": {
     "@types/react": "^16.4.11",
-    "rimraf": "^2.6.2"
+    "react-testing-library": "^5.0.1",
+    "rimraf": "^2.6.2",
+    "ts-jest": "^23.1.4"
   },
   "dependencies": {
     "polished": "^1.9.3",
