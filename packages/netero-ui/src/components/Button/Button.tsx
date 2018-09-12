@@ -18,15 +18,17 @@ const btnTypes: { [key: string]: string } = {
 
 export interface IBtnProps {
   color?: string;
-  type?: "Primary" | "Info" | "Success" | "Danger" | "Warning";
+  btnType?: "Primary" | "Info" | "Success" | "Danger" | "Warning";
   size?: "sm" | "md" | "lg";
   className?: string;
+  type?: "submit" | "button" | "reset";
   onClick: () => void;
+  children: any;
 }
 
 const Btn = styled.button<IBtnProps>`
-  background: ${({ color, type }) =>
-    color ? color : btnTypes[type || "Primary"]};
+  background: ${({ color, btnType }) =>
+    color ? color : btnTypes[btnType || "Primary"]};
   
  
   width: ${props => btnSizes[props.size || "md"]};
@@ -45,8 +47,10 @@ const Btn = styled.button<IBtnProps>`
   
 }
   &:hover {
-    background: ${({ color, type }) =>
-      color ? darken(0.07)(color) : darken(0.07)(btnTypes[type || "Primary"])};
+    background: ${({ color, btnType }) =>
+      color
+        ? darken(0.07)(color)
+        : darken(0.07)(btnTypes[btnType || "Primary"])};
    
     letter-spacing: .5px;
     cursor: pointer;
@@ -68,7 +72,7 @@ const Btn = styled.button<IBtnProps>`
 
 export class Button extends React.Component<IBtnProps> {
   static defaultProps = {
-    type: "Primary",
+    btnType: "Primary",
     size: "md"
   };
   render() {
