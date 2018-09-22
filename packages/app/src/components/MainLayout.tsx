@@ -16,10 +16,20 @@ export class MainLayout extends React.Component<any, any> {
     };
   }
 
+  private handleBreakpoint = (broken: any) => {
+    if (broken && !this.state.collapse) {
+      this.setState({
+        collapse: true
+      });
+    }
+  };
+
   public render() {
     return (
       <Layout className="Layout">
         <Sider
+          breakpoint="md"
+          onBreakpoint={this.handleBreakpoint}
           trigger={null}
           collapsible={true}
           collapsed={this.state.collapsed}
@@ -52,8 +62,7 @@ export class MainLayout extends React.Component<any, any> {
               background: "#fff",
               margin: "24px 16px",
               padding: 24,
-              height: "100%",
-              minHeight: 280
+              height: "1250px"
             }}
           >
             {this.props.children}
