@@ -11,19 +11,19 @@ export class Buttons extends React.Component {
   public render() {
     const example = `
     <div style={{ height: "100px", display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap', alignItems: "end"}}>
-      <Button type="Primary" onClick={this.onClick}>
+      <Button btnType="Primary" onClick={this.onClick}>
         Primary
       </Button>
-      <Button type="Info" onClick={this.onClick}>
+      <Button btnType="Info" onClick={this.onClick}>
         Info
       </Button>
-      <Button type="Success" onClick={this.onClick}>
+      <Button btnType="Success" onClick={this.onClick}>
         Success
       </Button>
-      <Button type="Danger" onClick={this.onClick}>
+      <Button btnType="Danger" onClick={this.onClick}>
         Danger
       </Button>
-      <Button type="Warning" onClick={this.onClick}>
+      <Button btnType="Warning" onClick={this.onClick}>
         Warning
       </Button>
       <Button color="palevioletred" onClick={this.onClick}>
