@@ -17,7 +17,9 @@
       "**/rimraf",
       "**/rimraf/**",
       "**/ts-jest",
-      "**/ts-jest/**"
+      "**/ts-jest/**",
+      "**/awesome-typescript-loader",
+      "**/awesome-typescript-loader/**"
     ]
   },
   "devDependencies": {

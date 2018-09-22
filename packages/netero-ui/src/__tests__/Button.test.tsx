@@ -5,7 +5,7 @@ import {
   cleanup,
   waitForElement
 } from "react-testing-library";
-import { Button } from "./Button";
+import { Button } from "../components/Button/Button";
 
 describe("Button", () => {
   const myMockOnClick = jest.fn();
