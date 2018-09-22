@@ -35,6 +35,13 @@ export class PropTable extends React.Component<IPropTable> {
     const PropData = findComponentData(componentData, this.props.name);
     const data = extractPropData(PropData);
 
-    return <Table columns={columns} dataSource={data} />;
+    return (
+      <Table
+        columns={columns}
+        dataSource={data}
+        bordered={true}
+        pagination={false}
+      />
+    );
   }
 }
