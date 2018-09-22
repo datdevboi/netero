@@ -17,10 +17,14 @@ export class CodeExample extends React.Component<ICodeExample> {
           display: "flex",
           height: "100%",
           flexDirection: "column",
-          justifyContent: "space-between"
+          justifyContent: "start"
         }}
       >
-        <LiveProvider scope={this.props.scope} code={this.props.code}>
+        <LiveProvider
+          scope={this.props.scope}
+          code={this.props.code}
+          style={{ marginBottom: "50px" }}
+        >
           <div style={{ marginBottom: "25px" }}>
             <LivePreview />
           </div>
