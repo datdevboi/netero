@@ -9,10 +9,10 @@ export const componentData = [ { name: 'Button',
              name: 'color',
              required: false,
              type: { name: 'string' } },
-          type: 
+          btnType: 
            { defaultValue: { value: 'Primary' },
              description: '',
-             name: 'type',
+             name: 'btnType',
              required: false,
              type: 
               { name: '"Primary" | "Info" | "Success" | "Danger" | "Warning"' } },
@@ -28,6 +28,12 @@ export const componentData = [ { name: 'Button',
              name: 'className',
              required: false,
              type: { name: 'string' } },
+          type: 
+           { defaultValue: null,
+             description: '',
+             name: 'type',
+             required: false,
+             type: { name: '"submit" | "button" | "reset"' } },
           onClick: 
            { defaultValue: null,
              description: '',
