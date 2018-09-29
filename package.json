@@ -8,7 +8,7 @@
     "build:app": "lerna run build:netlify",
     "dev": "nodemon build --watch packages/netero-ui/src/components",
     "test": "jest",
-    "build-storybook": "lerna run build-storybook --scope=netero-ui"
+    "build-storybook": "lerna run --scope=netero-ui build-storybook"
   },
   "workspaces": {
     "packages": [
