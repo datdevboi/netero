@@ -7,5 +7,7 @@ import { linkTo } from "@storybook/addon-links";
 import { Input } from "../components/Input/Input";
 
 storiesOf("Input", module).add("simple input", () => (
-  <Input placeholder="Email" />
+  <div style={{ padding: "25px" }}>
+    <Input placeholder="Email" />
+  </div>
 ));
