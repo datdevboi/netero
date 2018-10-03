@@ -7,10 +7,14 @@ export interface ITable {
 }
 
 const Header = styled.thead<ITable>`
+  margin: 1em 0;
+  text-align: left;
   ${props => props.styledFunc && props.styledFunc()};
 `;
 
 const Row = styled.tr<ITable>`
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
   ${props => props.styledFunc && props.styledFunc()};
 `;
 
@@ -19,10 +23,20 @@ const Head = styled.th<ITable>`
 `;
 
 const Data = styled.td<ITable>`
+  text-align: left;
+  padding: 5px;
   ${props => props.styledFunc && props.styledFunc()};
 `;
 
 const MainTable = styled.table<ITable>`
+  max-width: 100%;
+  background-color: white;
+
+  background: #eeee;
+  color: #fff;
+  border-radius: 0.4em;
+  overflow: hidden;
+
   ${props => props.styledFunc && props.styledFunc()};
 `;
 const Body = styled.tbody<ITable>`
