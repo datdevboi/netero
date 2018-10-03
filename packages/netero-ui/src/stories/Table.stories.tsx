@@ -19,7 +19,7 @@ storiesOf("Table", module).add("simple Table", () => (
       <Table.Body>
         <Table.Row>
           {["Brian", 25, "125lb", "6'1"].map(data => (
-            <Table.Data>{data}</Table.Data>
+            <Table.Data styledFunc={() => `color: red`}>{data}</Table.Data>
           ))}
         </Table.Row>
       </Table.Body>
