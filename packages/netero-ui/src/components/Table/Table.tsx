@@ -66,7 +66,7 @@ const Foot = styled.tfoot<ITable>`
   ${props => props.styledFunc && props.styledFunc()};
 `;
 
-class Table extends React.Component {
+export class Table extends React.Component<ITable> {
   static Header = Header;
   static Row = Row;
   static Head = Head;
@@ -77,5 +77,3 @@ class Table extends React.Component {
     return <MainTable>{this.props.children}</MainTable>;
   }
 }
-
-export { Table };
