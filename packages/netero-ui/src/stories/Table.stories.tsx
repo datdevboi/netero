@@ -21,15 +21,30 @@ const TableExample = `
           <Table.Data>{data}</Table.Data>
         ))}
       </Table.Row>
+      <Table.Row>
+        {["Jackie", 25, "110lb", "5'4"].map(data => (
+          <Table.Data>{data}</Table.Data>
+        ))}
+      </Table.Row>
     </Table.Body>
   </Table>
 `;
 storiesOf("Table", module).add("Table", () => (
-  <div style={{ padding: "25px" }}>
-    <LiveProvider scope={{ Table }} code={TableExample.toString()}>
+  <div style={{ padding: "25px", height: "250px" }}>
+    <h1>Table:</h1>
+    <LiveProvider
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        height: "100%"
+      }}
+      scope={{ Table }}
+      code={TableExample.toString()}
+    >
+      <LivePreview />
       <LiveEditor />
       <LiveError />
-      <LivePreview />
     </LiveProvider>
   </div>
 ));
