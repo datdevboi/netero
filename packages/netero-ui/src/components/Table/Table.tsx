@@ -20,10 +20,6 @@ const Row = styled.tr<ITable>`
     background: #ebebeb;
   }
 
-  &:nth-child(odd):hover td {
-    background: #4e5066;
-    color: white;
-  }
   ${props => props.styledFunc && props.styledFunc()};
 `;
 
@@ -31,6 +27,13 @@ const Head = styled.th<ITable>`
   text-align: left;
   padding: 10px;
   border-right: 1px solid #ddd;
+  background: white;
+
+  color: #696969;
+
+  font-weight: 100;
+
+  vertical-align: middle;
   ${props => props.styledFunc && props.styledFunc()};
 `;
 
