@@ -51,6 +51,8 @@ storiesOf("Table", module).add("Table", () => (
         will inject the style into the component
       </p>
     </div>
+    <h3>Usage:</h3>
+    <pre>{`import {Table} from 'netero-ui'`}</pre>
     <div>
       <LiveProvider
         style={{
