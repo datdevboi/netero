@@ -29,7 +29,7 @@ const TableExample = `
   </Table>
 `;
 storiesOf("Table", module).add("Table", () => (
-  <div style={{ padding: "25px", height: "250px" }}>
+  <div style={{ padding: "25px", height: "100%" }}>
     <h1>Table:</h1>
     <div>
       <LiveProvider
@@ -40,9 +40,10 @@ storiesOf("Table", module).add("Table", () => (
           height: "100%"
         }}
         scope={{ Table }}
-        code={TableExample.toString()}
+        code={TableExample}
       >
         <LivePreview />
+        <hr />
         <LiveEditor />
         <LiveError />
       </LiveProvider>
