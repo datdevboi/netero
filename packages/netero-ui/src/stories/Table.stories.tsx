@@ -5,6 +5,7 @@ import { storiesOf } from "@storybook/react";
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 import { Table } from "../components/Table/Table";
 import { PropTable } from "../utils/components/PropTable";
+import { CodeExample } from "../utils/components/CodeExample";
 const TableExample = `
   <Table>
     <Table.Header>
@@ -53,26 +54,7 @@ storiesOf("Table", module).add("Table", () => (
     </div>
     <h3>Usage:</h3>
     <pre>{`import {Table} from 'netero-ui'`}</pre>
-    <div>
-      <LiveProvider
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          height: "100%"
-        }}
-        scope={{ Table }}
-        code={TableExample}
-      >
-        <LivePreview />
-        <hr />
-        <LiveEditor />
-        <LiveError />
-      </LiveProvider>
-    </div>
-    <div>
-      <h2>Props:</h2>
-      <PropTable componentName="Table" />
-    </div>
+
+    <CodeExample componentName="Table" scope={{ Table }} code={TableExample} />
   </div>
 ));
