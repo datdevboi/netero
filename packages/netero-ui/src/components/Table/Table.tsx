@@ -2,6 +2,9 @@ import * as React from "react";
 import styled from "styled-components";
 
 export interface ITable {
+  /**
+    A function that returns css that will be injected to the component
+   */
   styledFunc?: () => string;
   children?: any;
 }
