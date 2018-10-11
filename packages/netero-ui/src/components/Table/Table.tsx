@@ -77,6 +77,6 @@ export class Table extends React.Component<ITable> {
   static Body = Body;
   static Foot = Foot;
   render() {
-    return <MainTable>{this.props.children}</MainTable>;
+    return <MainTable styledFunc={this.props.styledFunc}>{this.props.children}</MainTable>;
   }
 }
