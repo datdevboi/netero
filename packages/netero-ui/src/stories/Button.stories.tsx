@@ -4,15 +4,10 @@ import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
 import { Button } from "../components/Button/Button";
-import { withInfo } from "@storybook/addon-info";
 
-storiesOf("Button", module).add("with text", () => (
-  <Button onClick={action("clicked")}>Hello Button</Button>
+import { CodeExample } from "../utils/components/CodeExample";
+
+const code = `<Button onClick={action("clicked")}>Hello Button</Button>`;
+storiesOf("Button", module).add("Button", () => (
+  <CodeExample code={code} scope={{ Button, action }} componentName="Button" />
 ));
-// .add("with some emoji", () => (
-//   <Button onClick={action("clicked")}>
-//     <span role="img" aria-label="so cool">
-//       😀 😎 👍 💯
-//     </span>
-//   </Button>
-// ));
