@@ -4,7 +4,7 @@ import { storiesOf } from "@storybook/react";
 
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 import { Table } from "../components/Table/Table";
-import { PropTable } from "../utils/components/PropTable";
+
 import { CodeExample } from "../utils/components/CodeExample";
 const TableExample = `
   <Table>
@@ -58,3 +58,4 @@ storiesOf("Table", module).add("Table", () => (
     <CodeExample componentName="Table" scope={{ Table }} code={TableExample} />
   </div>
 ));
+ 
