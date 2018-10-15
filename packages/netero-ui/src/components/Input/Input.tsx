@@ -112,7 +112,7 @@ const InputContainer = styled.div`
 interface IInput {
   value: string;
   placeholder: string;
-  handleChange: (change: any) => void;
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 class Input extends React.Component<IInput> {
