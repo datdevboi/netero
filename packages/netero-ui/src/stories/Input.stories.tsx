@@ -8,6 +8,10 @@ import { Input } from "../components/Input/Input";
 
 storiesOf("Input", module).add("simple input", () => (
   <div style={{ padding: "25px" }}>
-    <Input placeholder="Email" />
+    <Input
+      placeholder="Email"
+      value={"Hello"}
+      handleChange={e => console.log(e.target.value)}
+    />
   </div>
 ));
