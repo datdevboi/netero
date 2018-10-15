@@ -109,7 +109,13 @@ const InputContainer = styled.div`
   }
 `;
 
-class Input extends React.Component<any> {
+interface IInput {
+  value: string;
+  placeholder: string;
+  handleChange: (change: any) => void;
+}
+
+class Input extends React.Component<IInput> {
   state = {
     hasFocus: false
   };
@@ -129,7 +135,10 @@ class Input extends React.Component<any> {
           placeholder=""
           value={this.props.value}
           onChange={this.props.handleChange}
-          className={this.state.hasFocus ? "has-content" : ""}
+          onFocus={this.handleFocus}
+          className={
+            this.state.hasFocus || this.props.value ? "has-content" : ""
+          }
         />
         <label>{this.props.placeholder}</label>
         <span className="focus-border">
