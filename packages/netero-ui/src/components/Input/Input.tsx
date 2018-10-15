@@ -93,14 +93,14 @@ const InputContainer = styled.div`
     transition: 0.4s;
   }
 
-  & > .has-content${InputBase} ~ .focus-border i:before,
-  & > .has-content${InputBase} ~ .focus-border i:after {
+  & > ${InputBase}.has-content ~ .focus-border i:before,
+  & > ${InputBase}.has-content ~ .focus-border i:after {
     top: -1px;
     height: 100%;
     transition: 0.6s;
   }
 
-  & > .has-content.${InputBase} ~ label {
+  & > ${InputBase}.has-content ~ label {
     top: -18px;
     left: 0;
     font-size: 12px;
