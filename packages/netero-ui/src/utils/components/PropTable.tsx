@@ -5,26 +5,28 @@ import { componentData } from "../../data/componentData";
 
 interface IPropTable {
   componentName: string;
+  data: any;
 }
 
 const propKeys = ["name", "description", "defaultValue", "required", "type"];
 
 export class PropTable extends React.Component<IPropTable> {
   renderRows = () => {
-    const data = findComponentData(componentData, this.props
-      .componentName as string);
-
-    const dataKeys = Object.keys(data);
+    const dataKeys = Object.keys(this.props.data);
 
     return dataKeys.map((key: any, index: number) => (
       <Table.Row key={index}>
-        <Table.Data>{data[key].name}</Table.Data>
-        <Table.Data>{data[key].description}</Table.Data>
+        <Table.Data>{this.props.data[key].name}</Table.Data>
+        <Table.Data>{this.props.data[key].description}</Table.Data>
         <Table.Data>
-          {data[key].defaultValue ? data[key].defaultValue.value : ""}
+          {this.props.data[key].defaultValue
+            ? this.props.data[key].defaultValue.value
+            : ""}
         </Table.Data>
-        <Table.Data>{data[key].required ? "true" : "false"}</Table.Data>
-        <Table.Data>{data[key].type.name}</Table.Data>
+        <Table.Data>
+          {this.props.data[key].required ? "true" : "false"}
+        </Table.Data>
+        <Table.Data>{this.props.data[key].type.name}</Table.Data>
       </Table.Row>
     ));
   };
