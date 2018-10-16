@@ -12,7 +12,7 @@ interface ICodeExample {
 
 export class CodeExample extends React.Component<ICodeExample> {
   public render() {
-    const data = findComponentData(componentData, this.props
+    const { data, examples } = findComponentData(componentData, this.props
       .componentName as string);
 
     return (
