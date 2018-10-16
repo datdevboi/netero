@@ -1,6 +1,8 @@
 import * as React from "react";
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 import { PropTable } from "./PropTable";
+import { findComponentData } from "../findComponentData";
+import { componentData } from "../../data/componentData";
 
 interface ICodeExample {
   code: string;
@@ -10,6 +12,9 @@ interface ICodeExample {
 
 export class CodeExample extends React.Component<ICodeExample> {
   public render() {
+    const data = findComponentData(componentData, this.props
+      .componentName as string);
+
     return (
       <div
         style={{
@@ -33,7 +38,7 @@ export class CodeExample extends React.Component<ICodeExample> {
           <LiveError />
         </LiveProvider>
 
-        <PropTable componentName={this.props.componentName} />
+        <PropTable data={data} componentName={this.props.componentName} />
       </div>
     );
   }
