@@ -8,8 +8,12 @@ const parse = reactdcts.parse;
 
 const paths = {
   components: path.join(__dirname, "../packages/netero-ui/src", "components"),
-  examples: path.join(__dirname, "../src", "examples"),
-  output: path.join(__dirname, "../packages/netero-ui/src/data", "componentData.ts")
+  examples: path.join(__dirname, "../packages/netero-ui/src", "examples"),
+  output: path.join(
+    __dirname,
+    "../packages/netero-ui/src/data",
+    "componentData.ts"
+  )
 };
 
 function getDirectories(filepath: string) {
@@ -38,8 +42,8 @@ function generate(paths: any) {
 
     return {
       name: fileName,
-      data: data[0]
-      //   examples: getExampleData(paths.examples, fileName)
+      data: data[0],
+      examples: getExampleData(paths.examples, fileName)
     };
   });
 
@@ -73,7 +77,6 @@ function generate(paths: any) {
         // // So remove the .js extension to get the component name.
         // name: file.slice(0, -3),
         // description: info.description,
-        name: info[0].displayName,
 
         code: content
       };
