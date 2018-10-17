@@ -4,6 +4,7 @@ import chalk from "chalk";
 import * as reactdcts from "react-docgen-typescript";
 import util from "util";
 import chokidar from "chokidar";
+import prettier from "prettier";
 
 const parse = reactdcts.parse;
 
@@ -72,10 +73,15 @@ function generate(paths: any) {
     return examples.map((file: string) => {
       const filePath = path.join(examplesPath, componentName, file);
       const content = readFile(filePath);
-      const code = content
+      let code = content
         .split("\n")
         .slice(2)
         .join("");
+
+      code = prettier.format(code, {
+        parser: "typescript",
+        proseWrap: "always"
+      });
 
       const info = parse(filePath);
 
