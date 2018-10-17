@@ -3,9 +3,8 @@ import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 import { PropTable } from "./PropTable";
 import { findComponentData } from "../findComponentData";
 import { componentData } from "../../data/componentData";
-
+import { Examples } from "./Examples";
 interface ICodeExample {
-  code: string;
   scope: object;
   componentName: string;
 }
@@ -25,19 +24,13 @@ export class CodeExample extends React.Component<ICodeExample> {
           justifyContent: "start"
         }}
       >
-        <LiveProvider
-          scope={this.props.scope}
-          code={this.props.code}
-          style={{ marginBottom: "50px" }}
-        >
-          <div style={{ marginBottom: "25px" }}>
-            <LivePreview />
-          </div>
-
-          <LiveEditor />
-          <LiveError />
-        </LiveProvider>
-
+        {examples.map((exampleData: { name: string; code: string }) => (
+          <Examples
+            code={exampleData.code}
+            scope={this.props.scope}
+            name={exampleData.name}
+          />
+        ))}
         <PropTable data={data} componentName={this.props.componentName} />
       </div>
     );
