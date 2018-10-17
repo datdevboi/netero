@@ -72,12 +72,13 @@ function generate(paths: any) {
       const filePath = path.join(examplesPath, componentName, file);
       const content = readFile(filePath);
       const info = parse(filePath);
+
       return {
         // // By convention, component name should match the filename.
         // // So remove the .js extension to get the component name.
         // name: file.slice(0, -3),
         // description: info.description,
-
+        name: info[0].displayName,
         code: content
       };
     });
