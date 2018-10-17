@@ -3,7 +3,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "gen:data": "ts-node-dev --respawn ./scripts/genComponentData.ts",
+    "gen:data": "ts-node-dev ./scripts/genComponentData.ts",
     "build:netero-ui": "lerna run build --scope=netero-ui && yarn install",
     "build:app": "lerna run build:netlify",
     "dev": "nodemon build --watch packages/netero-ui/src/components",
