@@ -1,8 +1,12 @@
 import * as React from "react";
 import { Button } from "../../components/Button/Button";
 
-class ButtonExample extends React.Component {
+class BasicButton extends React.Component {
   render() {
-    return <Button onClick={() => false}>Hello</Button>;
+    return (
+      <div>
+        <Button onClick={() => false}>Hello</Button>
+      </div>
+    );
   }
 }
