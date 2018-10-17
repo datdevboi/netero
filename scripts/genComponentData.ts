@@ -3,6 +3,7 @@ import path from "path";
 import chalk from "chalk";
 import * as reactdcts from "react-docgen-typescript";
 import util from "util";
+import chokidar from "chokidar";
 
 const parse = reactdcts.parse;
 
@@ -97,4 +98,8 @@ function generate(paths: any) {
   );
 }
 
-generate(paths);
+chokidar
+  .watch([paths.examples, paths.components])
+  .on("change", function(event, path) {
+    generate(paths);
+  });
