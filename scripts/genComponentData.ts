@@ -71,15 +71,21 @@ function generate(paths: any) {
     return examples.map((file: string) => {
       const filePath = path.join(examplesPath, componentName, file);
       const content = readFile(filePath);
+      const code = content
+        .split("\n")
+        .slice(2)
+        .join("");
+
       const info = parse(filePath);
+      console.log(info);
 
       return {
         // // By convention, component name should match the filename.
         // // So remove the .js extension to get the component name.
         // name: file.slice(0, -3),
         // description: info.description,
-        name: info[0].displayName,
-        code: content
+        // name: info[0].description,
+        code
       };
     });
   }
