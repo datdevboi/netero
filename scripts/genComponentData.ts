@@ -78,7 +78,6 @@ function generate(paths: any) {
         .join("");
 
       const info = parse(filePath);
-      console.log(info);
 
       return {
         // // By convention, component name should match the filename.
