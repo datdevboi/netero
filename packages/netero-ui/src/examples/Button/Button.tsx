@@ -5,7 +5,19 @@ class BasicButton extends React.Component {
   render() {
     return (
       <div>
-        <Button onClick={() => false}>Hello</Button>
+        <Button onClick={() => false}>Primary</Button>
+        <Button btnType="Success" onClick={() => false}>
+          Success
+        </Button>
+        <Button btnType="Info" onClick={() => false}>
+          Info
+        </Button>
+        <Button btnType="Warning" onClick={() => false}>
+          Warning
+        </Button>
+        <Button btnType="Danger" onClick={() => false}>
+          Danger
+        </Button>
       </div>
     );
   }
