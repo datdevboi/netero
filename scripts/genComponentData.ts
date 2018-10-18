@@ -75,12 +75,11 @@ function generate(paths: any) {
       const content = readFile(filePath);
       let code = content
         .split("\n")
-        .slice(2)
+        .slice(3)
         .join("");
 
       code = prettier.format(code, {
-        parser: "typescript",
-        proseWrap: "always"
+        parser: "typescript"
       });
 
       const info = parse(filePath);
@@ -103,6 +102,17 @@ function generate(paths: any) {
   );
 }
 
+function removeWhitespace(s: string) {
+  return s.replace(/\s/g, "");
+}
+
+function removeSpace(s: string, i: any) {
+  if (i > 0) {
+    return removeWhitespace(s);
+  }
+
+  return s;
+}
 chokidar
   .watch([paths.examples, paths.components])
   .on("change", function(event, path) {
