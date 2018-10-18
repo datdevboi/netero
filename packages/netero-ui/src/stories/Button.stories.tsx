@@ -1,19 +1,14 @@
-import React from "react";
+import * as React from "react";
 
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import { linkTo } from "@storybook/addon-links";
 
 import { Button } from "../components/Button/Button";
 
-storiesOf("Button", module)
-  .add("with text", () => (
-    <Button onClick={action("clicked")}>Hello Button</Button>
-  ))
-  .add("with some emoji", () => (
-    <Button onClick={action("clicked")}>
-      <span role="img" aria-label="so cool">
-        😀 😎 👍 💯
-      </span>
-    </Button>
-  ));
+import { CodeExample } from "../utils/components/CodeExample";
+
+const scope = { Button };
+
+storiesOf("Button", module).add("Button", () => (
+  <CodeExample scope={scope} componentName="Button" />
+));

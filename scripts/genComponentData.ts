@@ -3,13 +3,19 @@ import path from "path";
 import chalk from "chalk";
 import * as reactdcts from "react-docgen-typescript";
 import util from "util";
+import chokidar from "chokidar";
+import prettier from "prettier";
 
 const parse = reactdcts.parse;
 
 const paths = {
   components: path.join(__dirname, "../packages/netero-ui/src", "components"),
-  examples: path.join(__dirname, "../src", "examples"),
-  output: path.join(__dirname, "../packages/app/src/data", "componentData.ts")
+  examples: path.join(__dirname, "../packages/netero-ui/src", "examples"),
+  output: path.join(
+    __dirname,
+    "../packages/netero-ui/src/data",
+    "componentData.ts"
+  )
 };
 
 function getDirectories(filepath: string) {
@@ -38,8 +44,8 @@ function generate(paths: any) {
 
     return {
       name: fileName,
-      data: data[0]
-      //   examples: getExampleData(paths.examples, fileName)
+      data: data[0],
+      examples: getExampleData(paths.examples, fileName)
     };
   });
 
@@ -67,15 +73,24 @@ function generate(paths: any) {
     return examples.map((file: string) => {
       const filePath = path.join(examplesPath, componentName, file);
       const content = readFile(filePath);
+      let code = content
+        .split("\n")
+        .slice(3)
+        .join("");
+
+      code = prettier.format(code, {
+        parser: "typescript"
+      });
+
       const info = parse(filePath);
+
       return {
         // // By convention, component name should match the filename.
         // // So remove the .js extension to get the component name.
         // name: file.slice(0, -3),
         // description: info.description,
-        name: info[0].displayName,
-
-        code: content
+        // name: info[0].description,
+        code
       };
     });
   }
@@ -87,4 +102,19 @@ function generate(paths: any) {
   );
 }
 
-generate(paths);
+function removeWhitespace(s: string) {
+  return s.replace(/\s/g, "");
+}
+
+function removeSpace(s: string, i: any) {
+  if (i > 0) {
+    return removeWhitespace(s);
+  }
+
+  return s;
+}
+chokidar
+  .watch([paths.examples, paths.components])
+  .on("change", function(event, path) {
+    generate(paths);
+  });

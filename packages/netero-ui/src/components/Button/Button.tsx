@@ -17,11 +17,17 @@ const btnTypes: { [key: string]: string } = {
 };
 
 export interface IBtnProps {
+  /** The color of the Button, this will overide the btnType default colors */
   color?: string;
+  /** The type of Button when it comes to style */
   btnType?: "Primary" | "Info" | "Success" | "Danger" | "Warning";
+  /** The size of the Button */
   size?: "sm" | "md" | "lg";
+  /** Your personal className for the Button */
   className?: string;
+  /** Html button type Attribute */
   type?: "submit" | "button" | "reset";
+  /** OnClick function */
   onClick: () => void;
   children: any;
 }
