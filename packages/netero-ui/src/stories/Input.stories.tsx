@@ -6,12 +6,12 @@ import { linkTo } from "@storybook/addon-links";
 
 import { Input } from "../components/Input/Input";
 
-storiesOf("Input", module).add("simple input", () => (
-  <div style={{ padding: "25px" }}>
-    <Input
-      placeholder="Email"
-      value={"Hello"}
-      handleChange={e => console.log(e.target.value)}
-    />
-  </div>
-));
+// storiesOf("Input", module).add("simple input", () => (
+//   <div style={{ padding: "25px" }}>
+//     <Input
+//       placeholder="Email"
+//       value={"Hello"}
+//       handleChange={e => console.log(e.target.value)}
+//     />
+//   </div>
+// ));

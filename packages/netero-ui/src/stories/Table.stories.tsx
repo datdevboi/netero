@@ -29,33 +29,32 @@ const TableExample = `
     </Table.Body>
   </Table>
 `;
-storiesOf("Table", module).add("Table", () => (
-  <div style={{ padding: "25px", height: "100%" }}>
-    <h1>Table</h1>
-    <div>
-      <h3>Description:</h3>
-      <p>
-        Table component is a compound Component.It has a couple of internal
-        components it exposes to the user:
-      </p>
-      <p />
-      <ul>
-        <li>Table.Header</li>
-        <li>Table.Head</li>
-        <li>Table.Body</li>
-        <li>Table.Row</li>
-        <li>Table.Data</li>
-        <li>Table.Foot</li>
-      </ul>
-      <p>
-        Each of these components have the <strong>StyledFunc</strong> prop that
-        will inject the style into the component
-      </p>
-    </div>
-    <h3>Usage:</h3>
-    <pre>{`import {Table} from 'netero-ui'`}</pre>
+// storiesOf("Table", module).add("Table", () => (
+//   // <div style={{ padding: "25px", height: "100%" }}>
+//   //   <h1>Table</h1>
+//   //   <div>
+//   //     <h3>Description:</h3>
+//   //     <p>
+//   //       Table component is a compound Component.It has a couple of internal
+//   //       components it exposes to the user:
+//   //     </p>
+//   //     <p />
+//   //     <ul>
+//   //       <li>Table.Header</li>
+//   //       <li>Table.Head</li>
+//   //       <li>Table.Body</li>
+//   //       <li>Table.Row</li>
+//   //       <li>Table.Data</li>
+//   //       <li>Table.Foot</li>
+//   //     </ul>
+//   //     <p>
+//   //       Each of these components have the <strong>StyledFunc</strong> prop that
+//   //       will inject the style into the component
+//   //     </p>
+//   //   </div>
+//   //   <h3>Usage:</h3>
+//   //   <pre>{`import {Table} from 'netero-ui'`}</pre>
 
-    <CodeExample componentName="Table" scope={{ Table }} code={TableExample} />
-  </div>
-));
- 
+//   //   <CodeExample componentName="Table" scope={{ Table }} code={TableExample} />
+//   </div>
+// ));
